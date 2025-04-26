@@ -1,11 +1,11 @@
-import dns from "dns";
-dns.setServers(["8.8.8.8", "8.8.4.4"]);
+// import dns from "dns";
+// dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 // import dotenv from "dotenv"; //this brings in the dotenv library into your code.
 import dotenv from "dotenv";
 dotenv.config(); // what this does is read the .env file and loads its values into process.env so that anywhere in the code we can access the environment (variable) like (process.env.MONGODB_URI) without hard-coding them.
 // const myDB = process.env.MONGO_URI; // this is assigning the mongoDB URI environment variables that were configured to a constant.
-console.log("Connecting with URI:--->", process.env.MONGODB_URI);
+// console.log("Connecting with URI:--->", process.env.MONGODB_URI);
 const uri = process.env.MONGODB_URI;
 
 // console.log("Mongodb_URI: ", process.env.MONGODB_URI);

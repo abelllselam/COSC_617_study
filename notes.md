@@ -84,3 +84,21 @@ db.users.updateMany({ name: “Jal” }, { $inc: { name:
 db.users.drop()
 (drop user collection, should always return true if the collection exists)
 ```
+
+# models:
+
+a model is a JS class tied to one MongoDB collection.
+This is what it looks like:
+
+```js
+const bookSchema = new mongoose.Schema({ title: String, price: Number });
+const Book = mongoose.model("Book", bookSchema); // ← model
+```
+
+- A model in simple terms is a JS class that you use to talk to one MongoDB collection. It is build from a schema and it gives you helper methods like create, find, update and delete. By default the model is simgular name like: Item and maps to a plural collection items in MOngoDB.
+  - Please check the Item.js inside models folder for further information.
+- Think 3 layers in a typical Node backend:
+  Layer Main role Example folder
+  Routes / API HTTP endpoints (e.g. Express) routes/
+  Controllers Business logic per endpoint controllers/
+  Data layer Database access (Mongoose) models/
