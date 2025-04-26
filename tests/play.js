@@ -28,6 +28,14 @@ dotenv.config();
   const all = await Item.find();
   console.log("All items:", all);
 
+  // 5️⃣ DELETE one document (replace id with the real one you want gone)
+  await Item.deleteOne({ _id: "680d4861c321dc0121dd1c65" });
+  console.log("Deleted.");
+
+  // (optional) verify it’s gone
+  const check = await Item.findById("680d50b6a6381bd80ebd0315");
+  console.log("Should be null:", check);
+
   // 4️⃣ disconnect so Node exits
   await mongoose.disconnect();
 })().catch(console.error); //(async () => { /* ... */ })
